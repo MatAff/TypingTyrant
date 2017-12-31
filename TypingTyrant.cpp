@@ -21,7 +21,8 @@ int _tmain(int argc, _TCHAR* argv[])
 	char i;
 	long lastTime = 0;
 	long nrChar = 0;
-	double runningAvg = 50;
+	double longRunningAvg = 0; // This is the goal
+	double shortRunningAvg = 50; // This is the current
 
 	while (1)  
 	{
@@ -40,12 +41,14 @@ int _tmain(int argc, _TCHAR* argv[])
 					{
 						
 						// Update running average 50/50
-						runningAvg = runningAvg * 0.5 + nrChar * 0.5;
+						longRunningAvg = longRunningAvg * 0.75 + nrChar * 0.25;
+						shortRunningAvg = shortRunningAvg * 0.5 + nrChar * 0.5;
 
 						// Print message
 						//cout << "Backspace was pressed at " << getTime();
 						cout << "Characters typed since last backspace: " << nrChar << " ";
-						cout << "Running avg: " << runningAvg;
+						cout << "Long Running avg: " << longRunningAvg << " ";
+						cout << "Short Running avg: " << shortRunningAvg << " ";
 						cout << endl;
 
 						// Reset nrChar
@@ -54,7 +57,8 @@ int _tmain(int argc, _TCHAR* argv[])
 					}
 
 					// Beep if running average gets low
-					if (runningAvg < 20)
+					// if (runningAvg < 20)
+					if (shortRunningAvg < longRunningAvg)
 					{
 						Beep(1000, 100);
 					}
