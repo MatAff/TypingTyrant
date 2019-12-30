@@ -1,7 +1,5 @@
 #!/usr/bin/env python3
 
-# TODO: sort out licence, disentangle from keylogger
-# TODO: host on github
 # TODD: update to latest pyxhook, if it exists
 # TODO: allow users to configure
 # TODO: make playing sound less verbose
@@ -9,6 +7,9 @@
 # TODO: add install notes with required libraries
 # TODO: make sound dependent on performance
 # TODO: register commonly made mistakes (which char sequence is followed by bs)
+# TODO: make the python version available for Windows
+# DONE: host on github
+# DONE: sort out licence, disentangle from keylogger
 
 import os
 import datetime
@@ -28,8 +29,6 @@ class Sound(object):
 class Typing(object):
 
     def __init__(self):
-        self.sec = 0.5
-        self.freq = 400
         self.last = now()
         self.nr_char = 0
         self.run_long = 0  # the goal
@@ -54,9 +53,9 @@ class Typing(object):
                 self.nr_char = 0
 
                 if self.run_short < 20:
-                    Sound.beep(self.sec, self.freq)
+                    Sound.beep(0.5, 600)
                 if self.run_short < self.run_long:
-                    Sound.beep(self.sec, self.freq)
+                    Sound.beep(0.5, 400)
 
             self.last = now()
         else:
