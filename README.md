@@ -5,12 +5,12 @@ The program keeps track of average accuracy through a running average. When the 
 Future updates could include an easier way to set the accuracy benchmark or a way to set the benchmark based on current performance, such that it would be both achievable and motivating. 
 Futhermore the program could be converted from a console application to something on screen that periodically gives feedback by flashing a message or icon or the like. 
 
-There are two versions availble:A CPP version that works on Windows and a Python version that works on Linux. 
+There are two versions availble: A CPP version that works on Windows and a Python version that works on Linux. 
 
 Happy typing!
 
 ## Credits 
-Parts of this project incorperates code borrowed from: https://github.com/hiamandeep/py-keylogger/
+Part of this project incorperates code borrowed from: https://github.com/hiamandeep/py-keylogger/
 And this project would not be possible without the pyxhook module! 
 
 
