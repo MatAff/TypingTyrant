@@ -4,13 +4,13 @@
 # TODO: allow users to configure
 # TODO: make playing sound less verbose
 # TODO: include differt sounds
-# TODO: add install notes with required libraries 
 # TODO: make sound dependent on performance
 # TODO: register commonly made mistakes (which char sequence is followed by bs)
 # TODO: make the python version available for Windows
 # DONE: host on github
 # DONE: sort out licence, disentangle from keylogger
 # DONE: added requirements.txt
+# Done: add install notes with required libraries 
 
 import os
 import datetime

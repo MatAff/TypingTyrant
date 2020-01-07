@@ -13,6 +13,9 @@ Happy typing!
 Part of this project incorperates code borrowed from: https://github.com/hiamandeep/py-keylogger/
 And this project would not be possible without the pyxhook module! 
 
+## Install notes python
+Install modules specified in the requirements.txt file. In addition install sox.
+    sudo apt-get install sox
 
 ## Potential future updates 
 Open for contributions of others!
