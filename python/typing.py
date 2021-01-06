@@ -1,16 +1,18 @@
 #!/usr/bin/env python3
 
 # TODD: update to latest pyxhook, if it exists
+# TODO: update display
 # TODO: allow users to configure
-# TODO: make playing sound less verbose
 # TODO: include differt sounds
 # TODO: make sound dependent on performance
 # TODO: register commonly made mistakes (which char sequence is followed by bs)
 # TODO: make the python version available for Windows
+
+# DONE: make playing sound less verbose
 # DONE: host on github
 # DONE: sort out licence, disentangle from keylogger
 # DONE: added requirements.txt
-# Done: add install notes with required libraries 
+# Done: add install notes with required libraries
 
 import os
 import datetime
@@ -24,7 +26,7 @@ def now():
 class Sound(object):
 
     def beep(sec, freq):
-        os.system('play -n synth %s sin %s' % (sec, freq))
+        os.system('play -q -n synth %s sin %s' % (sec, freq))
 
 
 class Typing(object):
@@ -48,8 +50,8 @@ class Typing(object):
                 self.run_short = self.run_short * 0.5 + self.nr_char * 0.5
 
                 print(f'Characters typed since last backspace: {self.nr_char}')
-                print(f'Long running average: {self.run_long}')
-                print(f'Short running average: {self.run_short}')
+                print(f'Running average (long/short):', end='')
+                print(f' {self.run_long}/{self.run_short}')
 
                 self.nr_char = 0
 
